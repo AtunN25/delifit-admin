@@ -10,6 +10,7 @@ export interface Usuario {
   id_usuario: number;
   nombre: string;
   apellido: string;
+  telefono: string;
   documento: string;
   tipo_doc: TipoDocumento;
   puntos: number;

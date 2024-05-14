@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Usuario } from "@/types/model";
 
 export async function ObtenerUsuario() {
   const result = await axios.get("http://localhost:3000/api/usuario");
@@ -6,15 +7,9 @@ export async function ObtenerUsuario() {
   return result.data;
 }
 
-interface Usuario {
-  nombre: string;
-  apellido: string;
-  img_url: string;
-  documento: string;
-  tipo_doc: string;
-}
-
-export async function CrearUsuario(usuario: Usuario) {
+export async function CrearUsuario(
+  usuario: Omit<Usuario, "id_usuario" | "puntos">
+) {
   const result = await axios.post("http://localhost:3000/api/usuario", usuario);
   console.log(result.data);
   return result.data;

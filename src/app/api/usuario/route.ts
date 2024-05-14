@@ -10,11 +10,11 @@ export async function GET(request: Request) {
 
 // POST es el metodo para crear un usuario
 export async function POST(request: Request) {
-  const { nombre, apellido, img_url, documento, tipo_doc } =
+  const { nombre, apellido, img_url, telefono, documento, tipo_doc } =
     await request.json();
   const result = await sql`
-    INSERT INTO usuario (nombre, apellido, img_url, documento, tipo_doc)
-    VALUES (${nombre}, ${apellido}, ${img_url}, ${documento}, ${tipo_doc})
+    INSERT INTO usuario (nombre, apellido, img_url, telefono, documento, tipo_doc)
+    VALUES (${nombre}, ${apellido}, ${img_url}, ${telefono}, ${documento}, ${tipo_doc})
     RETURNING *`;
   return NextResponse.json({ data: result }, { status: 201 });
 }
