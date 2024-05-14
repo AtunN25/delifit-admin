@@ -1,4 +1,4 @@
-import { sql } from "@/libs/db";
+import { sql } from "@/lib/db";
 import { NextResponse } from "next/server";
 
 // GET es el metodo para obtener todos los usuarios
