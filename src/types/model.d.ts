@@ -1,17 +1,10 @@
-enum TipoDocumento {
-  DNI = "DNI",
-  CI = "CI",
-  PASAPORTE = "Pasaporte",
-  OTRO = "Otro",
-}
-
 export interface Usuario {
-  img_url: string;
-  id_usuario: number;
+  id_usuario: string;
   nombre: string;
   apellido: string;
   telefono: string;
   documento: string;
-  tipo_doc: TipoDocumento;
+  tipo_doc: "DNI" | "CI" | "Pasaporte" | "Otros";
   puntos: number;
+  img_url: string;
 }
