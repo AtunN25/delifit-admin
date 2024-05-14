@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import "@/style/global.css";
+import "@/styles/globals.css";
 
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/context/ThemeProvider";
