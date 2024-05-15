@@ -57,6 +57,7 @@ export const CreateForm = () => {
     startTransition(async () => {
       console.log(values);
       const result = await CrearUsuario(values);
+      form.reset();
       /* loginAction(values, callbackUrl)
         .then((data) => {
           if (data?.error) {
