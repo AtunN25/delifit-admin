@@ -16,7 +16,7 @@ export async function DELETE(request: Request, context: { params: Params }) {
 
 // PUT es el metodo para actualizar un usuario
 export async function PUT(request: Request, context: { params: Params }) {
-  const { nombre, apellido, img_url, telefono, documento, tipo_doc } =
+  const { nombre, apellido, img_url, telefono, documento, tipo_doc, puntos } =
     await request.json();
   const result = await sql`
     UPDATE usuario 
@@ -26,6 +26,7 @@ export async function PUT(request: Request, context: { params: Params }) {
         telefono= ${telefono}, 
         documento = ${documento}, 
         tipo_doc = ${tipo_doc}
+        puntos = ${puntos}
     WHERE id = ${context.params.id}
     RETURNING *`;
   return NextResponse.json({ data: result }, { status: 200 });
