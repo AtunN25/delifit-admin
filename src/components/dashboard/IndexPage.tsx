@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 
 import { HomeIcon } from "lucide-react";
 
+import { Fragment } from "react";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -24,7 +26,6 @@ function formatString(inputString: string) {
 export function IndexPage() {
   const pathname = usePathname();
   const pathArray = pathname.split("/").filter(Boolean);
-
   return (
     <Breadcrumb className='hidden md:flex'>
       <BreadcrumbList>
@@ -37,16 +38,15 @@ export function IndexPage() {
         </BreadcrumbItem>
         {pathArray.map((item, index) => {
           const partialPath = "/" + pathArray.slice(0, index + 1).join("/");
-
           return (
-            <>
+            <Fragment key={index}>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
                   <Link href={partialPath}>{formatString(item)}</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
-            </>
+            </Fragment>
           );
         })}
       </BreadcrumbList>
