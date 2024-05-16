@@ -31,7 +31,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-import { DialogCrearUsuario } from "@/components/Usuario/button-create";
+import { DialogCard } from "./DialogCard";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -102,7 +102,13 @@ export function DataTable<TData, TValue>({
               })}
           </DropdownMenuContent>
         </DropdownMenu>
-        <DialogCrearUsuario />
+        <DialogCard
+          title='Crear Nuevo Usuario'
+          description='Complete los campos para crear un nuevo usuario'
+          action='Create'
+        >
+          <Button variant='outline'>Nuevo</Button>
+        </DialogCard>
       </div>
       <div className='rounded-md border'>
         <Table>

@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -31,9 +29,9 @@ import { Button } from "@/components/ui/button";
 
 import { CrearUsuario } from "@/data/Usuario";
 //import { FormAlert } from "@/components/auth/FormAlert";
-//import { loginAction } from "@/actions/login";=
+//import { loginAction } from "@/actions/login";
 
-export const CreateForm = () => {
+export function FormCreate() {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
@@ -220,4 +218,4 @@ export const CreateForm = () => {
       </form>
     </Form>
   );
-};
+}

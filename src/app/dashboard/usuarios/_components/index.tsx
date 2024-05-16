@@ -1,5 +1,5 @@
-import { columns } from "./columns";
-import { DataTable } from "./data-table";
+import { columns } from "./Columns";
+import { DataTable } from "./DataTable";
 import { Usuario } from "@/types/model";
 import { ObtenerUsuario } from "@/data/Usuario";
 
@@ -8,7 +8,7 @@ async function getData(): Promise<Usuario[]> {
   return result.data;
 }
 
-export default async function DemoPage() {
+export default async function SectionUsuario() {
   const data = await getData();
 
   return (
