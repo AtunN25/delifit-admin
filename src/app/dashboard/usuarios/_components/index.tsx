@@ -12,7 +12,7 @@ export default async function SectionUsuario() {
   const data = await getData();
 
   return (
-    <div className='container mx-auto py-10'>
+    <div>
       <DataTable
         columns={columns}
         data={data}

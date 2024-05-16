@@ -73,7 +73,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         sectionLinks={mySectionLinks}
         configLinks={myConfigLinks}
       />
-      <div className='flex flex-col sm:gap-4 sm:py-4 sm:pl-14'>
+      <div className='flex flex-col sm:gap-4 sm:pl-14'>
         <Header
           sectionLinks={mySectionLinks}
           configLinks={myConfigLinks}

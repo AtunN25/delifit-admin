@@ -47,6 +47,7 @@ export const columns: ColumnDef<Usuario>[] = [
         <Button
           variant='ghost'
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className='bg-lime-100 hover:bg-lime-200 cursor-pointer'
         >
           Nombre
           <ArrowUpDown className='ml-2 h-4 w-4' />
@@ -65,6 +66,7 @@ export const columns: ColumnDef<Usuario>[] = [
         <Button
           variant='ghost'
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className='bg-lime-100 hover:bg-lime-200 cursor-pointer'
         >
           Puntos
           <ArrowUpDown className='ml-2 h-4 w-4' />

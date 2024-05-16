@@ -71,7 +71,7 @@ export function DataTable<TData, TValue>({
           onChange={(event) =>
             table.getColumn("nombre")?.setFilterValue(event.target.value)
           }
-          className='max-w-sm'
+          className='max-w-sm bg-slate-100 mx-2 cursor-pointer'
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -107,14 +107,22 @@ export function DataTable<TData, TValue>({
           description='Complete los campos para crear un nuevo usuario'
           action='Create'
         >
-          <Button variant='outline'>Nuevo</Button>
+          <Button
+            variant='outline'
+            className='bg-lime-200 hover:bg-lime-300 mx-2 cursor-pointer'
+          >
+            Nuevo
+          </Button>
         </DialogCard>
       </div>
       <div className='rounded-md border'>
         <Table>
-          <TableHeader>
+          <TableHeader className='bg-lime-100'>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow
+                key={headerGroup.id}
+                className='hover:bg-lime-100'
+              >
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead key={header.id}>
