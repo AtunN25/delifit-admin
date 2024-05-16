@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Delifit Dashboard Admin
 
-## Getting Started
+Breve descripción del proyecto.
 
-First, run the development server:
+## Instalación
+
+1. Clona el repositorio y abrelo con VSCode.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone <url del repositorio>
+  cd <nombre del repositorio>
+  code ./
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Ejecuta `npm install` para instalar las dependencias.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  npm i
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Agregar el archivo `.local.env`.
 
-## Learn More
+```.local.env
+  #credenciales de la base de datos
+  DB_HOST=<string>
+  DB_NAME=<string>
+  DB_USER=<string>
+  DB_PASS=<string>
+  DB_PORT=<number>
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. En modo desarrollo puede ejecutar.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Abre tu navegador y visita `http://localhost:3000`.
 
-## Deploy on Vercel
+## Uso
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Ejecuta `npm start` para iniciar la aplicación.
+2. Abre tu navegador y visita `http://localhost:3000`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contribución
+
+1. Haz un fork del repositorio.
+2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
+3. Realiza tus cambios y haz commit (`git commit -am 'Agrega nueva funcionalidad'`).
+4. Sube los cambios a tu repositorio fork (`git push origin feature/nueva-funcionalidad`).
+5. Abre un pull request para que tus cambios sean revisados.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
