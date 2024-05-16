@@ -2,13 +2,21 @@ import { BarraLateral } from "@/components/dashboard/BarraLateral";
 import { Header } from "@/components/dashboard/Header";
 
 import {
+  // dashboard
   Home,
+  // usuarios
   Users2,
-  Package,
-  ListFilter,
+  // productos
   ShoppingBag,
+  // insumos
+  ShoppingBasket,
+  // promociones
+  TicketPercentIcon,
+  // ventas
   ShoppingCart,
+  // configuracion
   Settings,
+  // ayuda
   CircleHelpIcon,
 } from "lucide-react";
 
@@ -26,17 +34,17 @@ const mySectionLinks = [
   {
     name: "Productos",
     href: "/dashboard/productos",
-    icon: <Package />,
+    icon: <ShoppingBag />,
   },
   {
     name: "Insumos",
     href: "/dashboard/insumos",
-    icon: <ListFilter />,
+    icon: <ShoppingBasket />,
   },
   {
     name: "Promociones",
     href: "/dashboard/promociones",
-    icon: <ShoppingBag />,
+    icon: <TicketPercentIcon />,
   },
   {
     name: "Ventas",

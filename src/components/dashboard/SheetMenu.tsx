@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Package2, PanelLeft } from "lucide-react";
+import Image from "next/image";
 
 import {
   Sheet,
@@ -45,11 +45,17 @@ export function SheetMenu({
         <SheetHeader>
           <SheetTitle>
             <Link
-              href='#'
-              className='group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base'
+              href='/'
+              className='group w-full shrink-0 flex items-center justify-center'
             >
-              <Package2 className='h-5 w-5 transition-all group-hover:scale-110' />
-              <span className='sr-only'>Acme Inc</span>
+              <Image
+                src='/delifit-logo.svg'
+                alt='Delifit'
+                width={320}
+                height={320}
+                className='transition-all group-hover:scale-110'
+              />
+              <span className='sr-only'>Delifit Admin</span>
             </Link>
           </SheetTitle>
           <SheetDescription>Explore la opciones de navegación</SheetDescription>

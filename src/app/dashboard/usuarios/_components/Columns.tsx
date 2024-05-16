@@ -24,6 +24,23 @@ import { Button } from "@/components/ui/button";
 
 export const columns: ColumnDef<Usuario>[] = [
   {
+    id: "Imagen",
+    accessorKey: "img_url",
+    header: "Imagen",
+    cell: ({ row }) => {
+      const usuario = row.original;
+      return (
+        <Avatar>
+          <AvatarImage
+            src={usuario.img_url}
+            alt={usuario.nombre}
+          />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+      );
+    },
+  },
+  {
     accessorKey: "nombre",
     header: ({ column }) => {
       return (
@@ -67,23 +84,6 @@ export const columns: ColumnDef<Usuario>[] = [
   {
     accessorKey: "telefono",
     header: "Teléfono",
-  },
-  {
-    id: "Imagen",
-    accessorKey: "img_url",
-    header: "Imagen",
-    cell: ({ row }) => {
-      const usuario = row.original;
-      return (
-        <Avatar>
-          <AvatarImage
-            src={usuario.img_url}
-            alt={usuario.nombre}
-          />
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
-      );
-    },
   },
   {
     id: "actions",
