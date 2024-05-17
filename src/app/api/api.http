@@ -1,10 +1,10 @@
-// Recibir los GETS
-
-###
-GET http://localhost:3000/api/usuario/22
+// #region USUARIOS
 
 ### 
 GET http://localhost:3000/api/usuario
+
+###
+GET http://localhost:3000/api/usuario/5
 
 ### POST
 POST http://localhost:3000/api/usuario
@@ -12,28 +12,27 @@ Content-Type: application/json
 
 {
   "img_url": "imagen.jpg",
-  "nombre": "Francisco",
-  "apellido": "Castro",
-  "documento": "48451684",
+  "nombre": "Federico",
+  "apellido": "Cordova",
+  "documento": "79456989",
   "puntos": 50,
   "tipo_doc": "DNI",
-  "telefono": "99999999",
+  "telefono": "99999998",
   "validacion": false
 }
 
 ### PUT
-PATCH http://localhost:3000/api/usuario/22
+PUT http://localhost:3000/api/usuario/5
 Content-Type: application/json
 
 {
-  "img_url": "https://avatars.githubusercontent.com/u/94066746?v=4",
-  "nombre": "Hernan",
-  "apellido": "Chambilla",
-  "documento": "12345678",
-  "puntos": 50,
+  "img_url": "usuario5.jpg",
+  "nombre": "Luna",
+  "apellido": "Sánchez",
+  "documento": "34567891",
+  "puntos": 180,
   "tipo_doc": "DNI",
-  "telefono": "00000001",
-  "validacion": false
+  "telefono": "946538522"
 }
 
 ### PATCH
@@ -47,8 +46,60 @@ Content-Type: application/json
 ### DELETE
 DELETE http://localhost:3000/api/usuario/22
 
+
+
+/////// #region PERSONAL /////// 
+
+
+
+### Obtener todo el personal
+GET http://localhost:3000/api/personal
+
+### Obtener todo el personal por ID
+GET http://localhost:3000/api/personal/7
+
+
+### POST
+POST http://localhost:3000/api/personal
+Content-Type: application/json
+
+{
+  "nombre": "Fausto",
+  "apellido": "Cordova",
+  "contrasena": "123456",
+  "documento": "85652145",
+  "telefono": "99899988",
+  "tipo_doc": "DNI",
+  "rol": "vendedor"
+}
+
+### PUT
+PUT http://localhost:3000/api/personal/8
+Content-Type: application/json
+
+{
+  "nombre": "Fausto",
+  "apellido": "Cordova",
+  "contrasena": "87654321*",
+  "documento": "85652145",
+  "telefono": "99899988",
+  "tipo_doc": "DNI",
+  "rol": "vendedor"
+}
+
+### PATCH
+PATCH http://localhost:3000/api/personal/8
+Content-Type: application/json
+
+{
+  "contrasena": "qwerty12345"
+}
+
+### DELETE
+DELETE http://localhost:3000/api/personal/8
+
 ###
-GET http://localhost:3000/api/usuario/1
+GET http://localhost:3000/api/personal
 
 
 

@@ -36,19 +36,20 @@ export async function PUT(request: Request, context: { params: Params }) {
     );
   }
 
-  const { nombre, apellido, img_url, telefono, documento, tipo_doc, puntos } =
+  const { img_url, nombre, apellido, documento, puntos, tipo_doc, telefono } =
     await request.json();
 
   const result = await sql`
     UPDATE usuario 
-    SET nombre = ${nombre}, 
-        apellido = ${apellido}, 
-        img_url = ${img_url}, 
-        telefono= ${telefono}, 
-        documento = ${documento}, 
-        tipo_doc = ${tipo_doc}
-        puntos = ${puntos}
-    WHERE id = ${context.params.id}
+    SET 
+      img_url = ${img_url},   
+      nombre = ${nombre}, 
+      apellido = ${apellido}, 
+      documento = ${documento}, 
+      puntos = ${puntos},
+      tipo_doc = ${tipo_doc},
+      telefono= ${telefono}
+    WHERE id_usuario = ${id}
     RETURNING *`;
   return NextResponse.json({ data: result }, { status: 200 });
 }
