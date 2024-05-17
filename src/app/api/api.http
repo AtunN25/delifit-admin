@@ -1,0 +1,130 @@
+// Recibir los GETS
+
+###
+GET http://localhost:3000/api/usuario/22
+
+### 
+GET http://localhost:3000/api/usuario
+
+### POST
+POST http://localhost:3000/api/usuario
+Content-Type: application/json
+
+{
+  "img_url": "imagen.jpg",
+  "nombre": "Francisco",
+  "apellido": "Castro",
+  "documento": "48451684",
+  "puntos": 50,
+  "tipo_doc": "DNI",
+  "telefono": "99999999",
+  "validacion": false
+}
+
+### PUT
+PATCH http://localhost:3000/api/usuario/22
+Content-Type: application/json
+
+{
+  "img_url": "https://avatars.githubusercontent.com/u/94066746?v=4",
+  "nombre": "Hernan",
+  "apellido": "Chambilla",
+  "documento": "12345678",
+  "puntos": 50,
+  "tipo_doc": "DNI",
+  "telefono": "00000001",
+  "validacion": false
+}
+
+### PATCH
+PATCH http://localhost:3000/api/usuario/22
+Content-Type: application/json
+
+{
+  "telefono": "00000002"
+}
+
+### DELETE
+DELETE http://localhost:3000/api/usuario/22
+
+###
+GET http://localhost:3000/api/usuario/1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Mostrar todas las peliculas
+GET http://localhost:1234/movies
+
+### Mostrar la pelicula por su ID
+GET http://localhost:1234/movies/06d537cd-f872-11ee-a6cb-0a0027000009
+
+### MOstrar las peliculas por su anio
+GET http://localhost:1234/movies/year/1994
+
+### Mostrar las peliculas por su genero usando Params
+GET http://localhost:1234/movies?genre=Action
+###
+GET http://localhost:1234/movies?year=1994
+
+###
+GET http://localhost:1234/movies?director=Roger%20Allers
+
+
+### POST
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "sql": "SELECT * FROM users",
+  "title": "The Godfather",
+  "year": 1975,
+  "director": "Francis Ford Coppola",
+  "duration": 175,
+  "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+  "genre": [
+    "Crime",
+    "Drama",
+    "Thriller"
+  ]
+}
+
+### PATCH 
+PATCH http://localhost:1234/movies/06d537cd-f872-11ee-a6cb-0a0027000009
+Content-Type: application/json
+
+{
+  "year": 2010,
+  "genre": [
+  "Action",
+  "Adventure",
+  "Sci-Fi"
+  ]
+}
+
+### DELETE
+DELETE http://localhost:1234/movies/64b3be1d-fbaf-11ee-a0a2-0a0027000009
