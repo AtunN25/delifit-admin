@@ -8,27 +8,12 @@ import { SheetMenu } from "@/components/dashboard/SheetMenu";
 import { IndexPage } from "@/components/dashboard/IndexPage";
 import { InputSearch } from "@/components/dashboard/InputSearch";
 import { OptionsAuth } from "@/components/dashboard/OptionsAuth";
+import { ThemeToggler } from "@/components/dashboard/ThemeToggler";
 
-interface HeaderProps {
-  sectionLinks: {
-    name: string;
-    href: string;
-    icon: React.ReactNode;
-  }[];
-  configLinks: {
-    name: string;
-    href: string;
-    icon: React.ReactNode;
-  }[];
-}
-
-export function Header({ sectionLinks, configLinks }: HeaderProps) {
+export function Header() {
   return (
-    <header className='sticky top-0 z-30 flex h-14 items-center gap-4 border-b px-4 sm:static sm:h-auto sm:border-0 sm:px-6 bg-lime-50 py-4'>
-      <SheetMenu
-        sectionLinks={sectionLinks}
-        configLinks={configLinks}
-      >
+    <header className='sticky top-0 z-30 flex h-14 items-center gap-4 border-b px-4 sm:static sm:h-auto sm:px-6 py-4 border-secondary'>
+      <SheetMenu>
         <Button
           size='icon'
           variant='outline'
@@ -40,6 +25,7 @@ export function Header({ sectionLinks, configLinks }: HeaderProps) {
       </SheetMenu>
       <IndexPage />
       <InputSearch />
+      <ThemeToggler />
       <OptionsAuth>
         <Button
           variant='outline'

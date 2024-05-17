@@ -45,12 +45,13 @@ export const columns: ColumnDef<Usuario>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant='ghost'
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className='bg-lime-100 hover:bg-lime-200 cursor-pointer'
+          className='group bg-transparent hover:bg-transparent text-secundary
+          hover:text-primary
+          cursor-pointer'
         >
-          Nombre
-          <ArrowUpDown className='ml-2 h-4 w-4' />
+          Puntos
+          <ArrowUpDown className='ml-2 h-4 w-4 group-hover:stroke-primary' />
         </Button>
       );
     },
@@ -64,12 +65,13 @@ export const columns: ColumnDef<Usuario>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant='ghost'
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className='bg-lime-100 hover:bg-lime-200 cursor-pointer'
+          className='group bg-transparent hover:bg-transparent text-secundary
+          hover:text-primary
+          cursor-pointer'
         >
           Puntos
-          <ArrowUpDown className='ml-2 h-4 w-4' />
+          <ArrowUpDown className='ml-2 h-4 w-4 group-hover:stroke-primary' />
         </Button>
       );
     },

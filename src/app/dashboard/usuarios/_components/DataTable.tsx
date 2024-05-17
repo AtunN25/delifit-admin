@@ -66,12 +66,12 @@ export function DataTable<TData, TValue>({
     <div>
       <div className='flex items-center py-4'>
         <Input
-          placeholder='Filtrar por Nombres...'
+          placeholder='Filtrar por Nombres ...'
           value={table.getColumn("nombre")?.getFilterValue() as string}
           onChange={(event) =>
             table.getColumn("nombre")?.setFilterValue(event.target.value)
           }
-          className='max-w-sm bg-slate-100 mx-2 cursor-pointer'
+          className='max-w-sm mx-2 hover:border-primary'
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -108,8 +108,8 @@ export function DataTable<TData, TValue>({
           action='Create'
         >
           <Button
-            variant='outline'
-            className='bg-lime-200 hover:bg-lime-300 mx-2 cursor-pointer'
+            variant='default'
+            className='mx-2 cursor-pointer'
           >
             Nuevo
           </Button>
@@ -117,15 +117,18 @@ export function DataTable<TData, TValue>({
       </div>
       <div className='rounded-md border'>
         <Table>
-          <TableHeader className='bg-lime-100'>
+          <TableHeader className=''>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
                 key={headerGroup.id}
-                className='hover:bg-lime-100'
+                className=''
               >
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead
+                      key={header.id}
+                      className=''
+                    >
                       {header.isPlaceholder
                         ? null
                         : flexRender(

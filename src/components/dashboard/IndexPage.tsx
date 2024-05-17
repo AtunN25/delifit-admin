@@ -43,7 +43,12 @@ export function IndexPage() {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href={partialPath}>{formatString(item)}</Link>
+                  <Link
+                    href={partialPath}
+                    className=''
+                  >
+                    {formatString(item)}
+                  </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
             </Fragment>
