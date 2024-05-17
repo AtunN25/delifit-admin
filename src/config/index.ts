@@ -4,6 +4,8 @@ const envVars = z.object({
   // Server
   PORT: z.string().default("3000"),
   NODE_ENV: z.string().default("development"),
+  // NextAuth
+  NEXT_PUBLIC_APP_URL: z.string(),
   // Credentials for the database
   DB_HOST: z.string(),
   DB_NAME: z.string(),
