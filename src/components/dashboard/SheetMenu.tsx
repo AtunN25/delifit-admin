@@ -15,26 +15,14 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import React from "react";
+import { sectionLinks } from "@/config/myLinks";
+import { configLinks } from "@/config/myLinks";
 
-interface HeaderProps {
-  sectionLinks: {
-    name: string;
-    href: string;
-    icon: React.ReactNode;
-  }[];
-  configLinks: {
-    name: string;
-    href: string;
-    icon: React.ReactNode;
-  }[];
+interface SheetMenuProps {
   children: React.ReactNode;
 }
 
-export function SheetMenu({
-  sectionLinks,
-  configLinks,
-  children,
-}: HeaderProps) {
+export function SheetMenu({ children }: SheetMenuProps) {
   return (
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
@@ -67,7 +55,7 @@ export function SheetMenu({
               href={link.href}
               className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
             >
-              {link.icon}
+              <link.icon />
               {link.name}
             </Link>
           ))}
@@ -80,7 +68,7 @@ export function SheetMenu({
               href={link.href}
               className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
             >
-              {link.icon}
+              <link.icon />
               {link.name}
             </Link>
           ))}

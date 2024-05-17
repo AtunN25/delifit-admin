@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   Tooltip,
@@ -6,23 +8,15 @@ import {
 } from "@/components/ui/tooltip";
 import React from "react";
 import Image from "next/image";
+import { sectionLinks } from "@/config/myLinks";
+import { configLinks } from "@/config/myLinks";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
-interface BarraLateralProps {
-  sectionLinks: {
-    name: string;
-    href: string;
-    icon: React.ReactNode;
-  }[];
-  configLinks: {
-    name: string;
-    href: string;
-    icon: React.ReactNode;
-  }[];
-}
-
-export function BarraLateral({ sectionLinks, configLinks }: BarraLateralProps) {
+export function BarraLateral() {
+  const pathName = usePathname();
   return (
-    <aside className='fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex bg-lime-50'>
+    <aside className='fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex'>
       <nav className='flex flex-col items-center gap-4 px-2 py-4'>
         <Link
           href='/'
@@ -42,9 +36,13 @@ export function BarraLateral({ sectionLinks, configLinks }: BarraLateralProps) {
             <TooltipTrigger asChild>
               <Link
                 href={link.href}
-                className='flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8'
+                className={cn(
+                  "flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-10 md:w-10",
+                  pathName === link.href &&
+                    "bg-secondary bg-opacity-10 border-2 border-secondary-foreground/50 rounded-lg "
+                )}
               >
-                {link.icon}
+                <link.icon className='' />
                 <span className='sr-only'>{link.name}</span>
               </Link>
             </TooltipTrigger>
@@ -58,9 +56,13 @@ export function BarraLateral({ sectionLinks, configLinks }: BarraLateralProps) {
             <TooltipTrigger asChild>
               <Link
                 href={link.href}
-                className='flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8'
+                className={cn(
+                  "flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-10 md:w-10",
+                  pathName === link.href &&
+                    "bg-secondary bg-opacity-10 border-2 border-secondary-foreground/50 rounded-lg"
+                )}
               >
-                {link.icon}
+                <link.icon className='' />
                 <span className='sr-only'>{link.name}</span>
               </Link>
             </TooltipTrigger>
