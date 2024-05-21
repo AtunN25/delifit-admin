@@ -19,19 +19,14 @@ export interface Usuario {
     telefono : string;
     password : string;
     documento : string;
-
-    //ENUM
     tipo_doc : "DNI" | "pasaporte" | "otro";
     rol : "admin" | "vendedor";
   }
 
   export interface Factura {
     id_factura : string;
-
-    //foreign key
     id_personal : string;
     id_usuario : string;
-
     fecha_emision : Date;
     subtotal : number;
     desc_promocion : number;
@@ -42,10 +37,7 @@ export interface Usuario {
 
   export interface Lista_Promocion {
     id_promocion : string;
-
-    //foreign key
     id_factura : string;
-
     cantidad : number;
     precio_cantidad : number;
     nombre : string;
@@ -53,10 +45,7 @@ export interface Usuario {
 
   export interface Lista_Producto {
     id_factura : string;
-
-    //foreign key
     id_producto : string;
-
     cantidad : number;
     precio_cantidad : number;
     nombre : string;
@@ -67,8 +56,6 @@ export interface Usuario {
     img_url : string;
     nombre : string;
     cantidad : number;
-
-    //ENUM
     categoria : "1" | "2" | "3";
     medida : "unidad" | "kilogramo" | "litro";
   }
@@ -79,8 +66,6 @@ export interface Usuario {
     nombre : string;
     descripcion : string;
     precio_base : number;
-    
-    //ENUM
     categoria : "1" | "2" | "3";
   }
 
@@ -94,8 +79,6 @@ export interface Usuario {
     estado_promocion : boolean;
     fecha_inicio : Date;
     fecha_fin : Date;
-    
-    //ENUM
     categoria : "1" | "2" | "3";
     dia_promocion : "lunes" | "martes" | "miércoles" | "jueves" | "viernes" | "sábado" | "domingo";
   }
