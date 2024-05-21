@@ -1,18 +1,18 @@
 import { Stringifier } from "postcss";
 
 export interface Usuario {
-    id_usuario: string | number;
+    id_usuario: string;
     nombre: string;
     apellido: string;
     telefono: string;
     documento: string;
-    tipo_doc: "DNI" | "CI" | "Pasaporte" | "Otros";
+    tipo_doc: "DNI" | "pasaporte" | "otro";
     puntos: number;
     img_url: string;
   }
 
   export interface Personal {
-    id_personal: string | number;
+    id_personal: string;
     img_url : string;
     nombre : string;
     apellido : string;
@@ -21,16 +21,16 @@ export interface Usuario {
     documento : string;
 
     //ENUM
-    tipo_doc : "";
-    rol : "";
+    tipo_doc : "DNI" | "pasaporte" | "otro";
+    rol : "admin" | "vendedor";
   }
 
   export interface Factura {
-    id_factura : string | number;
+    id_factura : string;
 
     //foreign key
-    id_personal : string | number;
-    id_usuario : string | number;
+    id_personal : string;
+    id_usuario : string;
 
     fecha_emision : Date;
     subtotal : number;
@@ -41,10 +41,10 @@ export interface Usuario {
   }
 
   export interface Lista_Promocion {
-    id_promocion : string | number ;
+    id_promocion : string;
 
     //foreign key
-    id_factura : string | number;
+    id_factura : string;
 
     cantidad : number;
     precio_cantidad : number;
@@ -52,10 +52,10 @@ export interface Usuario {
   }
 
   export interface Lista_Producto {
-    id_factura : string | number;
+    id_factura : string;
 
     //foreign key
-    id_producto : string | number;
+    id_producto : string;
 
     cantidad : number;
     precio_cantidad : number;
@@ -63,29 +63,29 @@ export interface Usuario {
   }
 
   export interface Insumo {
-    id_insumo : string | number;
+    id_insumo : string;
     img_url : string;
     nombre : string;
     cantidad : number;
 
     //ENUM
-    categoria : "";
-    medida : "";
+    categoria : "1" | "2" | "3";
+    medida : "unidad" | "kilogramo" | "litro";
   }
 
   export interface Producto {
-    id_produto : string | number;
+    id_produto : string;
     img_url : string;
     nombre : string;
     descripcion : string;
     precio_base : number;
     
     //ENUM
-    categoria : "";
+    categoria : "1" | "2" | "3";
   }
 
   export interface Promocion {
-    if_promocion : string | number;
+    if_promocion : string;
     img_url : string;
     nombre : string;
     descripcion : string;
@@ -96,18 +96,18 @@ export interface Usuario {
     fecha_fin : Date;
     
     //ENUM
-    categoria : "";
-    dia_promocion : "";
+    categoria : "1" | "2" | "3";
+    dia_promocion : "lunes" | "martes" | "miércoles" | "jueves" | "viernes" | "sábado" | "domingo";
   }
 
   export interface Ins_Prod {
-    id_insumo : string | number;
-    id_producto :  string | number;
+    id_insumo : string;
+    id_producto :  string;
     cantidad : number;
   }
 
   export interface Prod_Prom {
-    id_producto : string | number;
-    id_promocion :  string | number;
+    id_producto : string;
+    id_promocion :  string;
     cantidad : number;
   }
