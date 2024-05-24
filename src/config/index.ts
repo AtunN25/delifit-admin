@@ -12,6 +12,8 @@ const envVars = z.object({
   DB_USER: z.string(),
   DB_PASS: z.string(),
   DB_PORT: z.number(),
+  // Backend API
+  BACKEND_API_URL: z.string(),
 });
 
 envVars.parse(process.env);
