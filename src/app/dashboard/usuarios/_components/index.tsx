@@ -5,12 +5,12 @@ import { ObtenerUsuario } from "@/data/Usuario";
 
 async function getData(): Promise<Usuario[]> {
   const result = await ObtenerUsuario();
-  return result.data;
+
+  return result as Usuario[];
 }
 
 export default async function SectionUsuario() {
   const data = await getData();
-
   return (
     <div>
       <DataTable
