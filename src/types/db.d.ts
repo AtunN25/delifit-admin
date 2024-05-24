@@ -1,7 +1,7 @@
 import { Stringifier } from "postcss";
 
 export interface Usuario {
-  id_usuario: string;
+  id_usuario: string | number;
   nombre: string;
   apellido: string;
   telefono: string;
@@ -9,6 +9,8 @@ export interface Usuario {
   tipo_doc: "DNI" | "pasaporte" | "otro";
   puntos: number;
   img_url: string;
+  fecha_registro: Date | string;
+  validacion: boolean;
 }
 
 export interface Personal {
@@ -70,7 +72,7 @@ export interface Producto {
 }
 
 export interface Promocion {
-  id_promocion: string;
+  if_promocion: string;
   img_url: string;
   nombre: string;
   descripcion: string;

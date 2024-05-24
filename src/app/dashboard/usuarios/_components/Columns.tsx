@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 
-import { Usuario } from "@/types/model";
+import { Usuario } from "@/types/db";
 
 import {
   MoreHorizontal,
@@ -50,7 +50,7 @@ export const columns: ColumnDef<Usuario>[] = [
           hover:text-primary
           cursor-pointer'
         >
-          Puntos
+          Nombres
           <ArrowUpDown className='ml-2 h-4 w-4 group-hover:stroke-primary' />
         </Button>
       );
@@ -88,6 +88,14 @@ export const columns: ColumnDef<Usuario>[] = [
   {
     accessorKey: "telefono",
     header: "Teléfono",
+  },
+  {
+    accessorKey: "fecha_registro",
+    header: "Fecha de registro",
+    cell: ({ row }) => {
+      const usuario = row.original;
+      return new Date(usuario.fecha_registro).toLocaleString();
+    },
   },
   {
     id: "actions",
