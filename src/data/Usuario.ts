@@ -3,7 +3,6 @@ import { Usuario } from "@/types/db";
 
 export async function ObtenerUsuario() {
   const result = await axios.get(`${process.env.BACKEND_API_URL}/usuario`);
-  console.log(result.data);
   return result.data;
 }
 
