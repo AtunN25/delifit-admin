@@ -68,7 +68,7 @@ export interface Producto {
 }
 
 export interface Promocion {
-  if_promocion: string;
+  id_promocion: string;
   img_url: string;
   nombre: string;
   descripcion: string;
