@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Usuario } from "@/types/model";
+import { Usuario } from "@/types/db";
 
 export async function ObtenerUsuario() {
   const result = await axios.get(

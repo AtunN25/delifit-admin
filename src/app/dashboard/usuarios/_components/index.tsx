@@ -1,6 +1,6 @@
 import { columns } from "./Columns";
 import { DataTable } from "./DataTable";
-import { Usuario } from "@/types/model";
+import { Usuario } from "@/types/db";
 import { ObtenerUsuario } from "@/data/Usuario";
 
 async function getData(): Promise<Usuario[]> {

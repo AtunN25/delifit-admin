@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 
-import { Usuario } from "@/types/model";
+import { Usuario } from "@/types/db";
 
 import {
   MoreHorizontal,
