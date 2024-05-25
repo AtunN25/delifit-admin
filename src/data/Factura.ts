@@ -1,10 +1,8 @@
 import axios from "axios";
-import { Factura } from "@/types/model";
+import { Factura } from "@/types/db";
 
 export async function ObtenerFactura() {
-  const result = await axios.get(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/factura`
-  );
+  const result = await axios.get(`${process.env.BACKEND_API_URL}/factura`);
   //console.log(result.data);
   return result.data;
 }
@@ -13,7 +11,7 @@ export async function CrearFactura(
   factura: Omit<Factura, "id_factura" | "id_usuario" | "id_personal">
 ) {
   const result = await axios.post(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/factura`,
+    `${process.env.BACKEND_API_URL}/factura`,
     factura
   );
   //console.log(result.data);
@@ -25,7 +23,7 @@ export async function ActualizarFactura(
   id: number
 ) {
   const result = await axios.put(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/factura/${id}`,
+    `${process.env.BACKEND_API_URL}/factura/${id}`,
     factura
   );
   //console.log(result.data);
@@ -34,7 +32,7 @@ export async function ActualizarFactura(
 
 export async function EliminarFactura(id: number) {
   const result = await axios.delete(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/factura/${id}`
+    `${process.env.BACKEND_API_URL}/factura/${id}`
   );
   //console.log(result.data);
   return result.data;

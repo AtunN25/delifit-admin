@@ -1,17 +1,15 @@
 import axios from "axios";
-import { Insumo } from "@/types/model";
+import { Insumo } from "@/types/db";
 
 export async function ObtenerInsumo() {
-  const result = await axios.get(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/insumo`
-  );
+  const result = await axios.get(`${process.env.BACKEND_API_URL}/insumo`);
   //console.log(result.data);
   return result.data;
 }
 
 export async function CrearInsumo(insumo: Omit<Insumo, "id_insumo">) {
   const result = await axios.post(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/insumo`,
+    `${process.env.BACKEND_API_URL}/insumo`,
     insumo
   );
   //console.log(result.data);
@@ -23,7 +21,7 @@ export async function ActualizarInsumo(
   id: number
 ) {
   const result = await axios.put(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/insumo/${id}`,
+    `${process.env.BACKEND_API_URL}/insumo/${id}`,
     insumo
   );
   //console.log(result.data);
@@ -32,7 +30,7 @@ export async function ActualizarInsumo(
 
 export async function EliminarInsumo(id: number) {
   const result = await axios.delete(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/insumo/${id}`
+    `${process.env.BACKEND_API_URL}/insumo/${id}`
   );
   //console.log(result.data);
   return result.data;

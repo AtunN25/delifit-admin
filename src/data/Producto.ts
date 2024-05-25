@@ -1,17 +1,15 @@
 import axios from "axios";
-import { Producto } from "@/types/model";
+import { Producto } from "@/types/db";
 
 export async function ObtenerProducto() {
-  const result = await axios.get(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/producto`
-  );
+  const result = await axios.get(`${process.env.BACKEND_API_URL}/producto`);
   //console.log(result.data);
   return result.data;
 }
 
 export async function CrearProducto(producto: Omit<Producto, "id_producto">) {
   const result = await axios.post(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/producto`,
+    `${process.env.BACKEND_API_URL}/producto`,
     producto
   );
   //console.log(result.data);
@@ -23,7 +21,7 @@ export async function ActualizarProducto(
   id: number
 ) {
   const result = await axios.put(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/producto/${id}`,
+    `${process.env.BACKEND_API_URL}/producto/${id}`,
     producto
   );
   //console.log(result.data);
@@ -32,7 +30,7 @@ export async function ActualizarProducto(
 
 export async function EliminarProducto(id: number) {
   const result = await axios.delete(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/producto/${id}`
+    `${process.env.BACKEND_API_URL}/producto/${id}`
   );
   //console.log(result.data);
   return result.data;
