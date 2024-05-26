@@ -1,5 +1,8 @@
 import axios from "axios";
-import { Venta } from "@/types/model";
+import { Venta } from "@/types/db";
+
+// hacer lo cmabios necesarios para que funcione con la tabla venta
+// debido a la migracion del proyecto API
 
 export async function ObtenerVenta() {
   const result = await axios.get(
