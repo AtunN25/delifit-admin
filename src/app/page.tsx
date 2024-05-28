@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   console.log("Home");
@@ -9,12 +10,18 @@ export default function Home() {
       </div>
       <h1>Queque</h1>
       <Image
-        src='/producto/queque.jpg'
+        src='/delifit-logo.png'
         alt='Queque'
         width={500}
         height={500}
         className='rounded'
       />
+      <Link
+        href='/dashboard'
+        className='bg-lime-400'
+      >
+        Dashboard
+      </Link>
     </main>
   );
 }
