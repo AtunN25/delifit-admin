@@ -14,6 +14,10 @@ const envVars = z.object({
   DB_PORT: z.number(),
   // Backend API
   BACKEND_API_URL: z.string(),
+  // Credentials for Cloudinary
+  CLOUDINARY_CLOUD_NAME: z.string(),
+  CLOUDINARY_API_KEY: z.string(),
+  CLOUDINARY_API_SECRET: z.string(),
 });
 
 envVars.parse(process.env);

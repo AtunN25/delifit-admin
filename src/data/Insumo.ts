@@ -7,7 +7,9 @@ export async function ObtenerInsumo() {
   return result.data;
 }
 
-export async function CrearInsumo(insumo: Omit<Insumo, "id_insumo">) {
+export async function CrearInsumo(
+  insumo: Omit<Insumo, "id_insumo" | "visibilidad">
+) {
   const result = await axios.post(
     `${process.env.BACKEND_API_URL}/insumo`,
     insumo
