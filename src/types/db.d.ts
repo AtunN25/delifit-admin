@@ -65,8 +65,8 @@ export interface Insumo {
   id_insumo: string | number;
   img_url: string;
   nombre: string;
+  categoria: "categoria1" | "categoria2" | "categoria3";
   cantidad: number;
-  categoria: "1" | "2" | "3";
   medida: "unidad" | "kilogramo" | "litro";
   visibilidad: boolean;
 }
