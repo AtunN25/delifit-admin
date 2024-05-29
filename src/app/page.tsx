@@ -1,27 +1,20 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import Header from '../components/homePage/Header'
+import AboutDelifit from '../components/homePage/AboutDelifit'
+import Function from '../components/homePage/Function'
+import Contact from '../components/homePage/Contact'
 
 export default function Home() {
   console.log("Home");
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <div className='z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex'>
-        Pagina Principal
-      </div>
-      <h1>Queque</h1>
-      <Image
-        src='/delifit-logo.png'
-        alt='Queque'
-        width={500}
-        height={500}
-        className='rounded'
-      />
-      <Link
-        href='/dashboard'
-        className='bg-lime-400'
-      >
-        Dashboard
-      </Link>
+    <main className='bg-white flex min-h-screen flex-col justify-between w-full'>
+      
+      <Header></Header>
+      <AboutDelifit></AboutDelifit>
+      <Function></Function>
+      <Contact></Contact>
+      
     </main>
   );
 }
