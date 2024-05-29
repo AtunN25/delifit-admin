@@ -17,6 +17,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { EliminarInsumo } from "@/data/Insumo";
+import { useRouter } from "next/navigation";
 
 export const columns: ColumnDef<Insumo>[] = [
   {
@@ -80,7 +82,7 @@ export const columns: ColumnDef<Insumo>[] = [
     id: "actions",
     cell: ({ row }) => {
       const insumo = row.original;
-
+      const router = useRouter();
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -98,7 +100,13 @@ export const columns: ColumnDef<Insumo>[] = [
             <DropdownMenuItem>Ver Detalles</DropdownMenuItem>
             <DropdownMenuItem>Actualizar Dato</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className='text-red-500 focus:bg-red-50 focus:text-red-500'>
+            <DropdownMenuItem
+              className='text-red-500 focus:bg-red-50 focus:text-red-500'
+              onClick={async () => {
+                console.log("Eliminar insumo", insumo.id_insumo);
+                router.refresh();
+              }}
+            >
               <Trash className='mr-2 h-4 w-4' />
               <span>Eliminar</span>
             </DropdownMenuItem>

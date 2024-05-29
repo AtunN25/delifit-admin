@@ -30,7 +30,7 @@ export async function ActualizarInsumo(
   return result.data;
 }
 
-export async function EliminarInsumo(id: number) {
+export async function EliminarInsumo(id: number | string) {
   const result = await axios.delete(
     `${process.env.BACKEND_API_URL}/insumo/${id}`
   );
